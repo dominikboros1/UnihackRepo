@@ -10,7 +10,7 @@ export default function App() {
 
     const renderScreen = () => {
         switch (currentScreen) {
-            case 'Home':
+            case 'Info':
                 return <InfoScreen />;
             case 'Map':
                 return <MapScreen />;
