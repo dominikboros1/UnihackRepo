@@ -7,7 +7,7 @@ import ProfileScreen from '../screens/ProfileScreen';
 import {StatusBar} from "react-native";
 
 export default function App() {
-    const [futureScreen, setFutureScreen] = useState('map');
+    const [futureScreen, setFutureScreen] = useState('search');
 
     const renderScreen = () => {
 

@@ -29,12 +29,6 @@ export default function App() {
         });
     }, []);
 
-    const styles = StyleSheet.create({
-            selected: {
-
-            }
-        }
-    )
 
     const focusMap = () => {
         const Timisoara = {
@@ -48,11 +42,11 @@ export default function App() {
     };
 
     const onMarkerSelected = (marker: any) => {
-        console.log(marker);
+        console.log(marker.name);
     };
 
-    const calloutPressed = (ev: any) => {
-        console.log(ev);
+    const calloutPressed = () => {
+        console.log("Add to Favorite Pressed");
     };
 
     const onRegionChange = (region: Region) => {
@@ -80,7 +74,6 @@ export default function App() {
                     >
                         <Callout onPress={calloutPressed}>
                                 <View style={{padding: 5, alignItems:'center'}}>
-                                <Text style={styles.selected}></Text>
                                     <Text style={{fontWeight:'bold'}}>{marker.name}</Text>
                                     <AddToFavoritesButton onPress={addToFavoritesButton} />
                             </View>
