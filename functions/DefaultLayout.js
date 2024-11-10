@@ -6,9 +6,7 @@ import Feather from "react-native-vector-icons/Feather";
 import InfoScreen from "../screens/InfoScreen";
 import MapScreen from "../screens/MapScreen";
 
-const DefaultLayout = ({children, title}) => {
-
-    const [futureScreen, setFutureScreen] = useState(null);
+const DefaultLayout = ({children, title, setFutureScreen}) => {
 
     const templateStyles = StyleSheet.create({
         defaultContainer: {
@@ -61,26 +59,9 @@ const DefaultLayout = ({children, title}) => {
         },
     });
 
-    const renderScreen = () => {
-        console.log(`Future screen: ${futureScreen}`);
-        switch (futureScreen) {
-            case 'search':
-                return <InfoScreen />;
-            case 'map':
-                return <MapScreen />;
-            case 'heart':
-                return <FavoritesScreen />;
-            case 'user':
-                return <ProfileScreen />;
-            default:
-                return <InfoScreen />;
-        }
-    };
-
     const PageButton = ({name, screen}) => (
-        <TouchableOpacity onPress={() => {
-            setFutureScreen(screen)}
-        } style={templateStyles.pageButton}>
+        <TouchableOpacity onPress={() => setFutureScreen(screen)}
+        style={templateStyles.pageButton}>
             <Feather name={name} size={20} color='black'/>
         </TouchableOpacity>
     )
