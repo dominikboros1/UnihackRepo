@@ -28,7 +28,7 @@ export default function App() {
     return (
         <DefaultLayout title='EcoMap' setFutureScreen={setFutureScreen}>
             <StatusBar hidden={true} />
-            {renderScreen()}
+                {renderScreen()}
         </DefaultLayout>
     );
 }
