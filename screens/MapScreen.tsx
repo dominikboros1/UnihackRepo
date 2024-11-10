@@ -19,13 +19,20 @@ export default function App() {
         navigation.setOptions({
             headerRight: () => (
                 <TouchableOpacity onPress={focusMap}>
-                    <View style={{ padding: 10 }}>
+                    <View style={{padding: 10}}>
                         <Text>Focus</Text>
                     </View>
                 </TouchableOpacity>
             )
         });
     }, []);
+
+    const styles = StyleSheet.create({
+            selected: {
+
+            }
+        }
+    )
 
     const focusMap = () => {
         const Timisoara = {
@@ -51,7 +58,7 @@ export default function App() {
     };
 
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{flex: 1}}>
             <MapView
                 style={StyleSheet.absoluteFillObject}
                 initialRegion={INITIAL_REGION}
@@ -62,17 +69,17 @@ export default function App() {
                 onRegionChangeComplete={onRegionChange}
             >
                 {markers.map((marker, index) => (
-                    <Marker id={"lidl"}
-                            key={index}
-                            title={marker.name}
-                            coordinate={marker}
-                            onPress={() => onMarkerSelected(marker)}
-                            pinColor={marker.color}
-                            identifier={marker.id}
+                    <Marker
+                        key={index}
+                        title={marker.name}
+                        coordinate={marker}
+                        onPress={() => onMarkerSelected(marker)}
+                        pinColor={marker.color}
+                        identifier={marker.id}
                     >
                         <Callout onPress={calloutPressed}>
-                            <View style={{ padding: 10 }}>
-                                <Text style={{ fontSize: 24 }}></Text>
+                                <View style={{padding: 5}}>
+                                <Text style={styles.selected}></Text>
                             </View>
                         </Callout>
                     </Marker>

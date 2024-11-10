@@ -29,7 +29,7 @@ export const markers = [
 
     // Lidl - Blue
     {
-        id: '2',
+        id: 'Lidl',
         latitude: 45.745617,
         longitude: 21.228378,
         latitudeDelta: 0.02,
@@ -38,7 +38,7 @@ export const markers = [
         color: '#133E87'
     },
     {
-        id: '2',
+        id: 'Lidl',
         latitude: 45.755213,
         longitude: 21.232104,
         latitudeDelta: 0.02,
