@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import MapView, { Callout, Marker, PROVIDER_GOOGLE, Region } from 'react-native-maps';
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from 'expo-router';
 import { markers } from '@/functions/markers';
 import AddToFavoritesButton from "@/functions/AddToFavoritesButton";
