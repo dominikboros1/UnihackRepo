@@ -1,10 +1,6 @@
-import React, { useState } from 'react'
-import 'react-native-vector-icons'
-import icon from 'react-native-vector-icons/Feather'
+import React from 'react'
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import Feather from "react-native-vector-icons/Feather";
-import InfoScreen from "../screens/InfoScreen";
-import MapScreen from "../screens/MapScreen";
 
 const DefaultLayout = ({children, title, setFutureScreen}) => {
 
