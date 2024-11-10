@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import DefaultLayout from '../functions/DefaultLayout';
 import InfoScreen from '../screens/InfoScreen';
 import MapScreen from '../screens/MapScreen';
-// import FavoritesScreen from '../screens/FavoritesScreen';
+import FavoritesScreen from '../screens/FavoritesScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import {StatusBar} from "react-native";
 
 export default function App() {
-    const [currentScreen, setCurrentScreen] = useState('user');
+    const [futureScreen, setFutureScreen] = useState('search');
 
     const renderScreen = () => {
-        console.log(`Current screen: ${currentScreen}`);
-        switch (currentScreen) {
+
+        switch (futureScreen) {
             case 'search':
                 return <InfoScreen />;
             case 'map':
@@ -21,12 +21,12 @@ export default function App() {
             case 'user':
                 return <ProfileScreen />;
             default:
-                return <InfoScreen />;
+                return <MapScreen />;
         }
     };
 
     return (
-        <DefaultLayout>
+        <DefaultLayout title='EcoMap' setFutureScreen={setFutureScreen}>
             <StatusBar hidden={true} />
             {renderScreen()}
         </DefaultLayout>
