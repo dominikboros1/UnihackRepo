@@ -69,12 +69,8 @@ const EditProfile = ({ userInfo, setUserInfo, onClose }) => {
                     onChangeText={setName}
                 />
 
-
                 <View style={styles.buttonsContainer}>
-                    {/* Butonul de cancel (înapoi) */}
                     <Button title="Înapoi" onPress={onClose} color="#FF6347" />
-
-                    {/* Butonul de salvat */}
                     <Button title="Salvează schimbările" onPress={saveChanges} color="#72BF78" />
                 </View>
 
@@ -121,25 +117,22 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: '#72BF78',
     },
-    input: {
-        height: 40,
-        width: 200,
-        borderColor: '#333',
-        borderWidth: 1,
-        marginBottom: 20,
-        borderRadius:8 ,
-        paddingLeft: 15,
-        fontSize: 20,
-    },
+    // input: {
+    //     height: 40,
+    //     width: 200,
+    //     borderColor: '#333',
+    //     borderWidth: 1,
+    //     marginBottom: 20,
+    //     borderRadius:8 ,
+    //     paddingLeft: 15,
+    //     fontSize: 20,
+    // },
     buttonsContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        width: '70%',
+        width: '85%',
         marginTop: 20,
     },
-
-
-
 });
 
 export default EditProfile;
