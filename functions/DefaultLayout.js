@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'react-native-vector-icons'
 import icon from 'react-native-vector-icons/Feather'
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import Feather from "react-native-vector-icons/Feather";
+import InfoScreen from "../screens/InfoScreen";
+import MapScreen from "../screens/MapScreen";
 
 const DefaultLayout = ({children, title}) => {
+
+    const [futureScreen, setFutureScreen] = useState(null);
+
     const templateStyles = StyleSheet.create({
         defaultContainer: {
             justifyContent: 'space-between',
@@ -56,8 +61,26 @@ const DefaultLayout = ({children, title}) => {
         },
     });
 
-    const PageButton = ({name, onPress}) => (
-        <TouchableOpacity onPress={onPress} style={templateStyles.pageButton}>
+    const renderScreen = () => {
+        console.log(`Future screen: ${futureScreen}`);
+        switch (futureScreen) {
+            case 'search':
+                return <InfoScreen />;
+            case 'map':
+                return <MapScreen />;
+            case 'heart':
+                return <FavoritesScreen />;
+            case 'user':
+                return <ProfileScreen />;
+            default:
+                return <InfoScreen />;
+        }
+    };
+
+    const PageButton = ({name, screen}) => (
+        <TouchableOpacity onPress={() => {
+            setFutureScreen(screen)}
+        } style={templateStyles.pageButton}>
             <Feather name={name} size={20} color='black'/>
         </TouchableOpacity>
     )
@@ -71,10 +94,10 @@ const DefaultLayout = ({children, title}) => {
                 {children}
             </View>
             <View style={templateStyles.buttonRow}>
-                <PageButton name='search'/>
-                <PageButton name='map'/>
-                <PageButton name='heart'/>
-                <PageButton name='user'/>
+                <PageButton name='search' screen={"search"}/>
+                <PageButton name='map' screen={'map'}/>
+                <PageButton name='heart' screen={'heart'}/>
+                <PageButton name='user' screen={'user'}/>
             </View>
         </View>
     );

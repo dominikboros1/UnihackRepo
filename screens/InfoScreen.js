@@ -1,81 +1,144 @@
-import React from 'react';
-import { Animated, View, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
-import DefaultLayout from '/DefaultLayout';
+import React, { useState, useRef } from 'react';
+import { View, Text, TouchableOpacity, ScrollView, Animated, StyleSheet, Dimensions } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const InfoScreen = () => {
+const InfoPage = () => {
+    const [expandedInfoIndex, setExpandedInfoIndex] = useState(null);
+    const [expandedFAQIndex, setExpandedFAQIndex] = useState(null);
+    const scrollRef = useRef();
+
+    // Funcția pentru a comuta extinderea secțiunilor de informații
+    const toggleExpandInfo = (index) => {
+        setExpandedInfoIndex(expandedInfoIndex === index ? null : index);
+    };
+
+    // Funcția pentru a comuta extinderea secțiunilor de FAQ
+    const toggleExpandFAQ = (index) => {
+        setExpandedFAQIndex(expandedFAQIndex === index ? null : index);
+    };
+
+    // Funcția pentru a derula la începutul paginii
+    const scrollToTop = () => {
+        scrollRef.current?.scrollTo({ y: 0, animated: true });
+    };
+
+    const infoItems = [
+        {
+            headline: 'Procesul reciclării',
+            text: 'La prima vedere, procesul poate părea complicat: "Cum aflu ce magazine au un punct de returnare?", "De unde să știu programul magazinelor?" sau "Am timp să trec azi să reciclez?". Nu vă faceți griji, ne ocupăm noi de asta. Toate magazinele cu puncte de returnare și programul acestora sunt disponibile într-un singur loc în aplicație, iar harta integrată vă ajută să ajungeți la magazinul preferat.',
+            icon: 'recycle',
+        },
+        {
+            headline: 'Alegerea magazinului',
+            text: 'Pentru a ușura procesul de reciclare, magazinele preferate și cele vizitate recent sunt reținute în aplicație.',
+            icon: 'store',
+        },
+        {
+            headline: 'Impactul dvs. este vizibil',
+            text: 'Aveți un profil personal, unde puteți ține evidența numărului de ambalaje reciclate și vă păstrați motivația prin obiective săptămânale.',
+            icon: 'earth',
+        },
+        {
+            headline: 'De reținut',
+            text: 'Sunt acceptate pentru returnare doar ambalajele goale, neturtite, curate și cu eticheta intactă de Ambalaj cu Garanție. În funcție de punctul de returnare, ambalajele pot fi preluate manual de un angajat sau automat. În cazul punctelor automate, introduceți ambalajele pe rând și, pentru PET-uri, cu dopul spre dvs.',
+            icon: 'information',
+        },
+    ];
+
+    const faqs = [
+        {
+            question: 'Ce este reciclarea?',
+            answer: 'Reciclarea este procesul prin care deșeurile “cu valoare”, precum ambalajele, sunt transformate în materie primă pentru produse noi. Reciclarea aduce beneficii mediului și economiei.',
+            icon: 'recycle',
+        },
+        {
+            question: 'De ce trebuie să reciclez?',
+            answer: 'Reciclarea reduce depunerea deșeurilor la gropile de gunoi, care poluează mediul și afectează sănătatea. Reciclarea economisește energie pe termen lung, energia economisită la reciclarea unei sticle alimentând un bec timp de patru ore.',
+            icon: 'hand-heart',
+        },
+        {
+            question: 'Cum pot începe să reciclez?',
+            answer: 'Poți începe adunând ambalajele de băuturi (sticlă, plastic sau metal) care au simbolul de "Ambalaj cu Garanție".',
+            icon: 'play',
+        },
+        {
+            question: 'Ce este simbolul Ambalaj cu Garanție?',
+            answer: 'Simbolul indică faptul că o garanție a fost plătită pe lângă prețul produsului și poate fi recuperată dacă recipientul este reciclat la centrele RetuRO.',
+            icon: 'information-outline',
+        },
+        {
+            question: 'Pot recicla ambalaje fără simbolul de Ambalaj cu Garanție?',
+            answer: 'La centrele RetuRO: Nu. Acestea acceptă doar ambalajele cu Simbolul de Garanție.',
+            icon: 'close-circle',
+        },
+    ];
+
     return (
-        <DefaultLayout title="Info Screen">
-            <View style={styles.container}>
-                <View style={styles.ciorbabuna}>
-                    <Text style={styles.batpemata}>Informații</Text>
+        <View style={styles.container}>
+            <ScrollView ref={scrollRef} contentContainerStyle={styles.scrollView}>
+
+                {/* Secțiunea Informații */}
+                <View style={styles.card}>
+                    <Text style={styles.header}>
+                        <Icon name="information" size={24} color="#72BF78" /> Informații
+                    </Text>
+                    <Text style={styles.paragraph}>
+                        Sistemul de Garanție-Returnare este cel mai mare proiect de economie circulară din România, până în acest moment, care va face țara mai verde, mai curată și mai responsabilă. Procesul de reciclare este acum mai simplu ca niciodată: Cumperi băutura preferată, cauți simbolul Ambalaj cu Garanție, te deplasezi la magazinul tău preferat (important să aibă un punct de returnare), reciclezi, primești garanția înapoi și, cel mai important, te bucuri că ești un om responsabil care vrea un mediu curat.
+                    </Text>
                 </View>
-                <ScrollView ref={scrollRef} contentContainerStyle={styles.scrollView}>
 
-                    {/* Secțiunea Informații */}
-                    <View style={styles.card}>
-                        <Text style={styles.header}>
-                            <Icon name="information" size={24} color="#72BF78" /> Informații
-                        </Text>
-                        <Text style={styles.paragraph}>
-                            Sistemul de Garanție-Returnare este cel mai mare proiect de economie circulară din România, până în acest moment, care va face țara mai verde, mai curată și mai responsabilă. Procesul de reciclare este acum mai simplu ca niciodată: Cumperi băutura preferată, cauți simbolul Ambalaj cu Garanție, te deplasezi la magazinul tău preferat (important să aibă un punct de returnare), reciclezi, primești garanția înapoi și, cel mai important, te bucuri că ești un om responsabil care vrea un mediu curat.
-                        </Text>
-                    </View>
+                {/* Secțiunea Detalii Reciclare */}
+                <View style={styles.card}>
+                    <Text style={styles.header}>Detalii Reciclare</Text>
+                    {infoItems.map((item, index) => (
+                        <View key={index}>
+                            <TouchableOpacity onPress={() => toggleExpandInfo(index)} style={styles.expandableItem}>
+                                <Text style={styles.subHeader}>
+                                    <Icon name={item.icon} size={20} color="#72BF78" /> {item.headline}
+                                </Text>
+                            </TouchableOpacity>
+                            {expandedInfoIndex === index && (
+                                <Animated.View style={styles.expandedContent}>
+                                    <Text style={styles.paragraph}>{item.text}</Text>
+                                </Animated.View>
+                            )}
+                        </View>
+                    ))}
+                </View>
 
-                    {/* Secțiunea Detalii Reciclare */}
-                    <View style={styles.card}>
-                        <Text style={styles.header}>Detalii Reciclare</Text>
-                        {infoItems.map((item, index) => (
-                            <View key={index}>
-                                <TouchableOpacity onPress={() => toggleExpandInfo(index)} style={styles.expandableItem}>
-                                    <Text style={styles.subHeader}>
-                                        <Icon name={item.icon} size={20} color="#72BF78" /> {item.headline}
-                                    </Text>
-                                </TouchableOpacity>
-                                {expandedInfoIndex === index && (
-                                    <Animated.View style={styles.expandedContent}>
-                                        <Text style={styles.paragraph}>{item.text}</Text>
-                                    </Animated.View>
-                                )}
-                            </View>
-                        ))}
-                    </View>
+                {/* Secțiunea Impact */}
+                <View style={styles.card}>
+                    <Text style={styles.header}>
+                        <Icon name="earth" size={24} color="#72BF78" /> Impactul dvs. este vizibil
+                    </Text>
+                    <Text style={styles.paragraph}>Numărul de ambalaje reciclate:</Text>
+                </View>
 
-                    {/* Secțiunea Impact */}
-                    <View style={styles.card}>
-                        <Text style={styles.header}>
-                            <Icon name="earth" size={24} color="#72BF78" /> Impactul dvs. este vizibil
-                        </Text>
-                        <Text style={styles.paragraph}>Numărul de ambalaje reciclate:</Text>
-                        <Progress.Bar progress={0.7} width={200} color="#72BF78" />
-                    </View>
+                {/* Secțiunea Întrebări Frecvente */}
+                <View style={styles.card}>
+                    <Text style={styles.header}>Întrebări Frecvente</Text>
+                    {faqs.map((faq, index) => (
+                        <View key={index}>
+                            <TouchableOpacity onPress={() => toggleExpandFAQ(index)} style={styles.expandableItem}>
+                                <Text style={styles.subHeader}>
+                                    <Icon name={faq.icon} size={20} color="#72BF78" /> {faq.question}
+                                </Text>
+                            </TouchableOpacity>
+                            {expandedFAQIndex === index && (
+                                <Animated.View style={styles.expandedContent}>
+                                    <Text style={styles.paragraph}>{faq.answer}</Text>
+                                </Animated.View>
+                            )}
+                        </View>
+                    ))}
+                </View>
+            </ScrollView>
 
-                    {/* Secțiunea Întrebări Frecvente */}
-                    <View style={styles.card}>
-                        <Text style={styles.header}>Întrebări Frecvente</Text>
-                        {faqs.map((faq, index) => (
-                            <View key={index}>
-                                <TouchableOpacity onPress={() => toggleExpandFAQ(index)} style={styles.expandableItem}>
-                                    <Text style={styles.subHeader}>
-                                        <Icon name={faq.icon} size={20} color="#72BF78" /> {faq.question}
-                                    </Text>
-                                </TouchableOpacity>
-                                {expandedFAQIndex === index && (
-                                    <Animated.View style={styles.expandedContent}>
-                                        <Text style={styles.paragraph}>{faq.answer}</Text>
-                                    </Animated.View>
-                                )}
-                            </View>
-                        ))}
-                    </View>
-                </ScrollView>
-
-                {/* Buton pentru scroll-up */}
-                <TouchableOpacity style={styles.scrollTopButton} onPress={scrollToTop}>
-                    <Icon name="arrow-up-bold-circle" size={30} color="#000000" />
-                </TouchableOpacity>
-            </View>
-
-        </DefaultLayout>
+            {/* Buton pentru scroll-up */}
+            <TouchableOpacity style={styles.scrollTopButton} onPress={scrollToTop}>
+                <Icon name="arrow-up-bold-circle" size={30} color="#000000" />
+            </TouchableOpacity>
+        </View>
     );
 };
 
@@ -136,20 +199,6 @@ const styles = StyleSheet.create({
         padding: 10,
         elevation: 5,
     },
-    ciorbabuna: {
-        height: '9%',
-        width: '100%',
-        paddingTop: '3%',
-        paddingLeft: '3%',
-        backgroundColor: 'white',
-        alignItems: 'left',
-        justifyContent: 'center',
-    },
-    batpemata: {
-        fontSize: 25,
-        verticalAlign: 'middle',
-    }
 });
 
-
-export default InfoScreen;
+export default InfoPage;
