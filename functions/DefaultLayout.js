@@ -16,15 +16,14 @@ const DefaultLayout = ({children, title, setFutureScreen}) => {
             backgroundColor: '#D3EE98',
         },
         header: {
-            height: '10%',
+            height: '8%',
             backgroundColor: '#78cf39',
-            paddingTop: '4%',
+            paddingTop: '2.5%',
+            paddingLeft: '35%',
         },
         title: {
-            fontSize: 25,
-            textAlignVertical: 'center',
+            fontSize: 30,
             height:'100%',
-            marginLeft: '4%',
             color: 'white',
             fontWeight: 'bold',
             textShadowColor: 'black',
@@ -55,7 +54,7 @@ const DefaultLayout = ({children, title, setFutureScreen}) => {
             borderBottomWidth: 1,
             borderColor: 'white',
             alignItems: 'center',
-            paddingTop:'5%',
+            paddingTop:'4.5%',
         },
     });
 
