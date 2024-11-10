@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import MapView, { Callout, Marker, PROVIDER_GOOGLE, Region } from 'react-native-maps';
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from 'expo-router';
 import { markers } from '@/functions/markers';
+import AddToFavoritesButton from "@/functions/AddToFavoritesButton";
+import addToFavoritesButton from "@/functions/AddToFavoritesButton";
 
 const INITIAL_REGION = {
     latitude: 45.7494,
@@ -46,7 +48,7 @@ export default function App() {
     };
 
     const onMarkerSelected = (marker: any) => {
-        Alert.alert(marker.name);
+        console.log(marker);
     };
 
     const calloutPressed = (ev: any) => {
@@ -75,11 +77,12 @@ export default function App() {
                         coordinate={marker}
                         onPress={() => onMarkerSelected(marker)}
                         pinColor={marker.color}
-                        identifier={marker.id}
                     >
                         <Callout onPress={calloutPressed}>
-                                <View style={{padding: 5}}>
+                                <View style={{padding: 5, alignItems:'center'}}>
                                 <Text style={styles.selected}></Text>
+                                    <Text style={{fontWeight:'bold'}}>{marker.name}</Text>
+                                    <AddToFavoritesButton onPress={addToFavoritesButton} />
                             </View>
                         </Callout>
                     </Marker>

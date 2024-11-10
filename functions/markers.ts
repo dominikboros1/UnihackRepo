@@ -6,7 +6,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Kaufland Calea Martirilor',
-        color: 'red'
+        color: 'red',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 9PM",
     },
     {
         latitude: 45.739298237816016,
@@ -14,7 +16,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Kaufland Sagului',
-        color: 'red'
+        color: 'red',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 9PM",
     },
     {
         latitude: 45.76064376501775,
@@ -22,7 +26,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Kaufland Cetate',
-        color: 'red'
+        color: 'red',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 9PM",
     },
     {
         latitude: 45.76423087159146,
@@ -30,7 +36,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Kaufland Telegrafului',
-        color: 'red'
+        color: 'red',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 9PM",
     },
 
     {
@@ -39,7 +47,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Kaufland Funshop Park',
-        color: 'red'
+        color: 'red',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 9PM",
     },
     // Lidl - Blue
     {
@@ -48,7 +58,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Lidl Soarelui',
-        color: '#133E87'
+        color: '#133E87',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 8PM",
     },
     {
         latitude: 45.72837179080368,
@@ -56,7 +68,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Lidl Martirilor',
-        color: '#133E87'
+        color: '#133E87',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 8PM",
     },
     {
         latitude: 45.73761544215926,
@@ -64,7 +78,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Lidl Budai Deleanu',
-        color: '#133E87'
+        color: '#133E87',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 8PM",
     },
     {
         latitude: 45.76823265435445,
@@ -72,7 +88,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Lidl Aradului',
-        color: '#133E87'
+        color: '#133E87',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 8PM",
     },
     {
         latitude: 45.76310157655814,
@@ -80,7 +98,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Lidl Telegrafului',
-        color: '#133E87'
+        color: '#133E87',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 8PM",
     },
     {
         latitude: 45.764378276451936,
@@ -88,7 +108,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Lidl Locotenet Ovidiu Balea',
-        color: '#133E87'
+        color: '#133E87',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 8PM",
     },
     {
         latitude: 45.7500696853906,
@@ -96,7 +118,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Lidl Stefan Cel Mare',
-        color: '#133E87'
+        color: '#133E87',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 8PM",
     },
 
     // Penny - Yellow
@@ -106,7 +130,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Penny Timisoara Sud',
-        color: 'yellow'
+        color: 'yellow',
+        hoursweekdays: "7:30AM - 10PM",
+        hoursweekends: "8PM - 8PM",
     },
     {
         latitude: 45.759826336748745,
@@ -114,7 +140,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Penny Circumvalatiunii',
-        color: 'yellow'
+        color: 'yellow',
+        hoursweekdays: "7:30AM - 10PM",
+        hoursweekends: "8PM - 8PM",
     },
     {
         latitude: 45.77704870332015,
@@ -122,7 +150,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Penny Calea Aradului',
-        color: 'yellow'
+        color: 'yellow',
+        hoursweekdays: "7:30AM - 10PM",
+        hoursweekends: "8PM - 8PM",
     },
     {
         latitude: 45.76751239462183,
@@ -130,7 +160,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Penny Cetatii',
-        color: 'yellow'
+        color: 'yellow',
+        hoursweekdays: "7:30AM - 10PM",
+        hoursweekends: "8PM - 8PM",
     },
     // Carrefour - Orange
     {
@@ -139,7 +171,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Calea Șagului',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude:  45.733718483070774,
@@ -147,7 +181,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Dambovita',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude: 45.741786,
@@ -155,7 +191,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Torontalului',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude: 45.73283144250336,
@@ -163,7 +201,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Liviu Rebreanu',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude:  45.728035041066235,
@@ -171,7 +211,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Braytim',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude: 45.734737713632605,
@@ -179,7 +221,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Soarelui 1',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude:  45.73634712107883,
@@ -187,7 +231,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Soarelui 2',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude: 45.74597210465632,
@@ -195,7 +241,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour CRAFT',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude: 45.75553937843889,
@@ -203,7 +251,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Bega',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude:  45.75833934732431,
@@ -211,7 +261,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Circumvalatiunii',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude:  45.765241706169505,
@@ -219,7 +271,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Burebista',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude:  45.77019517218322,
@@ -227,7 +281,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Bucovinei',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude: 45.77210400754533,
@@ -235,7 +291,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Express Torontului',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude: 45.756474236538786,
@@ -243,7 +301,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Paris',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
         latitude: 45.7589752566424,
@@ -251,7 +311,9 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Take Ionescu',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     },
     {
 
@@ -260,6 +322,8 @@ export const markers = [
         latitudeDelta: 0.02,
         longitudeDelta: 0.02,
         name: 'Carrefour Piata Traian',
-        color: 'orange'
+        color: 'orange',
+        hoursweekdays: "7AM - 10PM",
+        hoursweekends: "8PM - 10PM",
     }
 ];
