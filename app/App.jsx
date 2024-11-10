@@ -1,30 +1,33 @@
-import React, {useState} from "react";
-import DefaultLayout from "../DefaultLayout";
-import InfoScreen from "../screens/InfoScreen";
-import MapScreen from "../screens/MapScreen";
-import FavoritesScreen from "../screens/FavoritesScreen";
-import ProfileScreen from "../screens/ProfileScreen";
+import React, { useState } from 'react';
+import DefaultLayout from '../functions/DefaultLayout';
+import InfoScreen from '../screens/InfoScreen';
+import MapScreen from '../screens/MapScreen';
+// import FavoritesScreen from '../screens/FavoritesScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import {StatusBar} from "react-native";
 
 export default function App() {
-    const [currentScreen, setCurrentScreen] = useState('Home');
+    const [currentScreen, setCurrentScreen] = useState('user');
 
     const renderScreen = () => {
+        console.log(`Current screen: ${currentScreen}`);
         switch (currentScreen) {
-            case 'Info':
+            case 'search':
                 return <InfoScreen />;
-            case 'Map':
+            case 'map':
                 return <MapScreen />;
-            case 'Favorites':
+            case 'heart':
                 return <FavoritesScreen />;
-            case 'Profile':
+            case 'user':
                 return <ProfileScreen />;
             default:
-                return <MapScreen />;
+                return <InfoScreen />;
         }
     };
 
     return (
-        <DefaultLayout setCurrentScreen={setCurrentScreen}>
+        <DefaultLayout>
+            <StatusBar hidden={true} />
             {renderScreen()}
         </DefaultLayout>
     );
