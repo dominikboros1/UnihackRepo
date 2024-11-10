@@ -15,7 +15,7 @@ const DefaultLayout = ({children, title, setFutureScreen}) => {
             height: '8%',
             backgroundColor: '#78cf39',
             paddingTop: '2.5%',
-            paddingLeft: '35%',
+            alignItems: 'center',
         },
         title: {
             fontSize: 30,
